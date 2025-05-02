@@ -1,15 +1,25 @@
 package edu.put.imo.lab3;
 
-public interface Move {
-    void apply();
-    void calculateDelta();
+import edu.put.imo.global.TSPSolution;
 
-    boolean isDeletable();
+public abstract class Move {
+    TSPSolution solution;
+    long delta;
+    int v1;
+    int v2;
+    int prev1;
+    int prev2;
+    int succ1;
+    int succ2;
+    abstract void apply();
+    abstract void calculateDelta();
 
-    boolean isApplicable();
+    abstract boolean isDeletable();
 
-    long getDelta();
+    abstract boolean isApplicable();
 
-    void printMove();
+    abstract long getDelta();
+
+    abstract void printMove();
 
 }
